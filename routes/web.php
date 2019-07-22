@@ -16,3 +16,11 @@ Route::get('/', function () {
 });
 
 Route::post('/backup', 'BackupController@backup');
+
+Route::get('/todo', function () {
+    return view('tasks');
+});
+
+Route::get('all_tasks', 'TaskController@index');
+Route::post('create_task', 'TaskController@store');
+Route::post('edit_task', 'TaskController@edit');
